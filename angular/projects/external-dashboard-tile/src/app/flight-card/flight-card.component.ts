@@ -17,13 +17,12 @@ export class FlightCardComponent implements OnChanges {
     }
 
     deactivate(): void {
-        //this.selected = false;
+        // this.selected = false;
         this.selectedChange.emit(false);
-        //this.cd.detectChanges();
     }
 
     activate(): void {
-        //this.selected = true;
+        // this.selected = true;
         this.selectedChange.emit(true);
         //this.cd.detectChanges();
     }

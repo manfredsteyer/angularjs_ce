@@ -20,7 +20,7 @@
   function init() {
     var card = document.getElementById('card');
     
-    card.selected = true;
+    card.selected = false;
 
     card.item = {
       id: 17,
@@ -35,8 +35,10 @@
     });
   }
 
-  setTimeout(init, 2000);
+  setTimeout(() => init(), 2000);
+  
   </script>
+  
 
 </body>
 </html>

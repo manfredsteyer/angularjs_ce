@@ -1,0 +1,23 @@
+<div
+    class="card"
+    [ngStyle]="{'background-color': (selected) ?  'rgb(204, 197, 185)' : 'white' }">
+
+    <div class="header">
+      <h1 class="title">{{item?.from}} to {{item?.to}}</h1>
+    </div>
+    <div class="content">
+      <p>
+          Id: {{item?.id}}
+      </p>
+      <p>
+          Date: {{item?.date | date:'short'}}
+      </p>
+      <p>
+          Selected: {{selected}}
+      </p>
+      <p>
+          <button *ngIf="!selected" class="btn btn-default" (click)="activate()">Select</button>
+          <button *ngIf="selected" class="btn btn-default" (click)="deactivate()">Remove</button>
+      </p>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ExternalDashboardTile</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  
+  <external-dashboard-tile a="50" b="60" c="70"></external-dashboard-tile>
+
+  <flight-card id="card"></flight-card>
+
+
+  <script>
+  
+  function init() {
+    var card = document.getElementById('card');
+    
+    card.selected = true;
+
+    card.item = {
+      id: 17,
+      from: 'here',
+      to: 'there',
+      date: new Date()
+    };
+
+    card.addEventListener('selectedChange', function(e) {
+      console.debug('selected-change', e.detail);
+      card.selected = e.detail;
+    });
+  }
+
+  setTimeout(init, 2000);
+  </script>
+
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="scripts.js"></script><script type="text/javascript" src="main.js"></script></body>
+</html>

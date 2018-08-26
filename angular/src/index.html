@@ -1,28 +1,44 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Starter</title>
+  <title>ExternalDashboardTile</title>
   <base href="/">
 
-  <!-- Theme -->
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="./assets/css/paper-dashboard.css" rel="stylesheet"/>
-  <link href="./assets/css/demo.css" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-  <link href="./assets/css/themify-icons.css" rel="stylesheet">
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <flight-app>
-    <div class="loader-container">
-      <div class="loader"></div>
-    </div>
-  </flight-app>
+  
+  <flight-card id="card"></flight-card>
+
+
+  <script>
+  
+  function init() {
+    var card = document.getElementById('card');
+    
+    card.selected = false;
+
+    card.item = {
+      id: 17,
+      from: 'here',
+      to: 'there',
+      date: new Date()
+    };
+
+    card.addEventListener('selectedChange', function(e) {
+      console.debug('selected-change', e.detail);
+      card.selected = e.detail;
+    });
+  }
+
+   window.addEventListener("load", function(event) {
+    init();
+   });
+  
+  </script>
+  
+
 </body>
 </html>

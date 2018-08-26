@@ -3,15 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --project dashboard -o",
-    "build": "ng build",
+    "start": "ng serve -o",
+    "build": "npm run bundle:ce && npm run copy:ce",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:ce": "ng serve --project external-dashboard-tile -o",
-    "build:ce": "npm run bundle:ce && npm run copy:ce",
-    "copy:ce": "cpr dist/external-dashboard-tile ../angularjs/angular-ce -d",
-    "bundle:ce": "ng build --project external-dashboard-tile --prod --output-hashing none"
+    "copy:ce": "cpr dist/demo ../angularjs/angular-ce -d",
+    "bundle:ce": "ng build --prod --output-hashing none"
   },
   "private": true,
   "dependencies": {

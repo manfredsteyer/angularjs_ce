@@ -14,15 +14,20 @@ export const bookingsComponent: angular.IComponentOptions = {
         }
 
         this.change = function(booking, e) {
-            console.debug('change', e);
             that.selection[booking.id] = e.detail;
-        }
-
-        this.test = function() {
         }
         
     },
     template: `
+    <div style="border: dashed 5px gray; padding: 10px;">
+        <div>
+            <img src="assets/img/angularjs.png" height="50">
+        </div>
+
+
+        <h1>Your Bookings</h1>
+
+
         <!--
         <ul ng-repeat="b in $ctrl.bookings">
             <li>{{b.id}}, {{b.from}} - {{b.to}}, {{b.date | date:'short'}} </li>
@@ -30,10 +35,10 @@ export const bookingsComponent: angular.IComponentOptions = {
         -->
 
         <div ng-repeat="b in $ctrl.bookings">
-            {{$ctrl.selection[b.id]}}
             <flight-card ng-prop-item="b" ng-prop-selected="$ctrl.selection[b.id]" ng-on-selected_change="$ctrl.change(b, $event)"></flight-card>
         </div>
 
         <pre>{{$ctrl.selection}}</pre>
+    </div>        
     `
 };

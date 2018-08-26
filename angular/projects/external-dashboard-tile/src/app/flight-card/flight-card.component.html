@@ -1,9 +1,17 @@
+<div style="border: dashed 2px darkred; padding: 10px; margin-bottom: 10px">
+
+    <div>
+        <img src="assets/img/angular2-logo.png" height="50">
+        <b>Angular</b>
+    </div>
+
+
 <div
     class="card"
     [ngStyle]="{'background-color': (selected) ?  'rgb(204, 197, 185)' : 'white' }">
 
     <div class="header">
-      <h1 class="title">{{item?.from}} to {{item?.to}}</h1>
+      <h1 class="title">{{item?.from}} - {{item?.to}}</h1>
     </div>
     <div class="content">
       <p>
@@ -21,3 +29,4 @@
       </p>
     </div>
   </div>
+</div>

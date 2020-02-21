@@ -16,6 +16,8 @@ export const bookingsComponent: angular.IComponentOptions = {
         this.change = function(booking, e) {
             that.selection[booking.id] = e.detail;
         }
+
+        this.show = false;
         
     },
     template: `
@@ -35,7 +37,11 @@ export const bookingsComponent: angular.IComponentOptions = {
         -->
 
         <div ng-repeat="b in $ctrl.bookings">
-            <flight-card ng-prop-item="b" ng-prop-selected="$ctrl.selection[b.id]" ng-on-selected_change="$ctrl.change(b, $event)"></flight-card>
+            <pre>{{b | json}}</pre>
+
+            
+            <flight-card ng-if="$ctrl.show" ng-prop-item="b" ng-prop-selected="$ctrl.selection[b.id]" ng-on-selected_change="$ctrl.change(b, $event)"></flight-card>
+            
         </div>
 
         <pre>{{$ctrl.selection}}</pre>
